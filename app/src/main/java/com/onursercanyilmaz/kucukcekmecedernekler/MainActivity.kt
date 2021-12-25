@@ -3,8 +3,7 @@ package com.onursercanyilmaz.kucukcekmecedernekler
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Button
-import com.onursercanyilmaz.kucukcekmecedernekler.view.DernekListActivity
+import com.onursercanyilmaz.kucukcekmecedernekler.view.MovieListActivity
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -13,7 +12,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         btnGo.setOnClickListener{
-            var intent = Intent(this,DernekListActivity::class.java)
+            var intent = Intent(this,MovieListActivity::class.java)
             startActivity(intent)
         }
 
