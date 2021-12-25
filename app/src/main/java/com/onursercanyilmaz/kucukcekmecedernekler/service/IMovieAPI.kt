@@ -6,7 +6,7 @@ import retrofit2.http.GET
 
 interface IMovieAPI {
     companion object {
-        const val MOVIES = "country=tr&userLanguage=tr&multiple={true}"
+        const val MOVIES = "dernekler.json"
     }
 
     @GET(MOVIES)

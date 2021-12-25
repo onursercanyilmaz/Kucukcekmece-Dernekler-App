@@ -63,13 +63,14 @@
         android:id="@+id/appbar"
 
         android:layout_width="match_parent"
-        android:layout_height="49dp">
+        android:layout_height="49dp"
+        android:background="#E85353">
 
         <TextView
             android:id="@+id/titleView"
             android:layout_width="match_parent"
             android:layout_height="32dp"
-            android:text="Küçükçekmece Dernekler"
+            android:text="MOVIES"
             android:textAlignment="center"
             android:textColor="#FFFFFF"
             android:textSize="16sp"
