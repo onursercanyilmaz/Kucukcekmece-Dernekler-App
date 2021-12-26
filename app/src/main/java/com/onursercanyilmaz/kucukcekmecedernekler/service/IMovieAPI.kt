@@ -6,7 +6,7 @@ import retrofit2.http.GET
 
 interface IMovieAPI {
     companion object {
-        const val MOVIES = "ispark/Park"
+        const val MOVIES = "api/recommend/movie?genres=&country=tr&userLanguage=en&multiple=true"
     }
 
     @GET(MOVIES)

@@ -45,9 +45,9 @@ class MovieListActivity : AppCompatActivity() {
         movieListViewModel = ViewModelProvider(this).get(MovieListViewModel::class.java)
         movieListViewModel.getMovieList()
         movieListViewModel.movieListLiveData.observe(this, Observer{resp->
-           Toast.makeText(this, resp[5].parkName.toString(), Toast.LENGTH_SHORT).show()
-            Log.i("filter", resp[5].parkName.toString())
-            println("filter:" + resp[5].parkName.toString())
+           Toast.makeText(this, resp.items?.get(5)?.originalTitle.toString(), Toast.LENGTH_SHORT).show()
+            Log.i("filter", resp.items?.get(5)?.originalTitle.toString())
+            println("filter:" + resp.items?.get(5)?.originalTitle.toString())
         })
 
 
