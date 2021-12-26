@@ -3,7 +3,9 @@ package com.onursercanyilmaz.kucukcekmecedernekler.view
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.widget.Toast
+import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.onursercanyilmaz.kucukcekmecedernekler.MainActivity
@@ -26,6 +28,8 @@ class MovieListActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
+
+
         rv_dernek_list.layoutManager = LinearLayoutManager(this,LinearLayoutManager.VERTICAL, false)
         rv_dernek_list.adapter = movieAdapter
 
@@ -37,11 +41,16 @@ class MovieListActivity : AppCompatActivity() {
 
         movieAdapter.getData(dernekList)
 
-        movieListViewModel = ViewModelProvider(this).get(MovieListViewModel::class.java)
-        movieListViewModel.movieListLiveData.observe(this,{resp->
-            Toast.makeText(this,resp.sayfa1?.get(5)?.kurumAdı.toString(),Toast.LENGTH_SHORT).show()
 
+        movieListViewModel = ViewModelProvider(this).get(MovieListViewModel::class.java)
+        movieListViewModel.getMovieList()
+        movieListViewModel.movieListLiveData.observe(this, Observer{resp->
+           Toast.makeText(this, resp[5].parkName.toString(), Toast.LENGTH_SHORT).show()
+            Log.i("filter", resp[5].parkName.toString())
+            println("filter:" + resp[5].parkName.toString())
         })
+
+
 
 
 

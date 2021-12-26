@@ -8,7 +8,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 class MovieAPIService {
 
-    private val BASE_URL = "https://data.kucukcekmece.bel.tr/static/acikveri/"
+    private val BASE_URL = "https://api.ibb.gov.tr/"
 
     var retrofitAPI: IMovieAPI = Retrofit.Builder()
         .baseUrl(BASE_URL)
